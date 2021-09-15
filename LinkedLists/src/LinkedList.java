@@ -73,9 +73,10 @@ public class LinkedList<T> implements Iterable<T> {
                     counter++;
                 }
 
-                last.next = current.next;
-                if(current.next!= null){
-                    T temp = current.next.item;
+                if(current!= null){
+                    T temp = current.item;
+                    last.next = current.next;
+                    size--;
                     return temp;
                 }
                 return null;
