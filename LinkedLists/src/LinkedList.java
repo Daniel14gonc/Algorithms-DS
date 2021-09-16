@@ -132,6 +132,26 @@ public class LinkedList<T> implements Iterable<T> {
         return null;
     }
 
+    public Node recursiveReverseLinkedList(){
+        if(!isEmpty()){
+            return recursiveReverse(first);
+        }
+
+        return null;
+    }
+    
+    private Node recursiveReverse(Node actual){
+        if(actual.next == null) return actual;
+
+        Node next = actual.next;
+        Node temp = recursiveReverse(next);
+        next.next = actual;
+        actual.next = null;
+
+        first = temp;
+        return first;
+    }
+
 
 
     @Override

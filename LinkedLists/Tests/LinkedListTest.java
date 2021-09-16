@@ -82,4 +82,25 @@ public class LinkedListTest {
         }
 
     }
+
+    @Test
+    public void recursiveReverseLinkedList() {
+        LinkedList<String> list = new LinkedList<String>();
+        list.add("Bye");
+        list.add("Hello");
+        list.add("Nice");
+        list.add("Cat");
+        list.add("Dog");
+        list.add("Food");
+        list.recursiveReverseLinkedList();
+        try{
+            String res = list.getFirst();
+            assertEquals("LinkedList reverse does not work.", res, "Food");
+            String second = list.get(2);
+            assertEquals("LinkedList reverse does not work.", second, "Cat");
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
 }
