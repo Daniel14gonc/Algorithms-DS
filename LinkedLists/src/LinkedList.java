@@ -8,6 +8,10 @@ public class LinkedList<T> implements Iterable<T> {
     private class Node{
         T item;
         Node next;
+
+        public String toString(){
+            return (String) next.item;
+        }
     }
 
     public LinkedList(){
@@ -86,6 +90,46 @@ public class LinkedList<T> implements Iterable<T> {
         }
         else
             return null;
+    }
+
+    public T removeLast(){
+        if(!isEmpty()){
+            Node current = first;
+            Node previous = new Node();
+            while (current.next!= null){
+                previous = current;
+                current = current.next;
+            }
+
+            if(current!= null){
+                T temp = current.item;
+                previous.next = null;
+                size--;
+                return temp;
+            }
+            return null;
+        }
+        return null;
+    }
+
+    public T getFirst(){
+        return first.item;
+    }
+
+    public Node reverseLinkedList(){
+        if(!isEmpty()){
+            Node reverse = null;
+            Node second = null;
+            while(first!=null){
+                second = first.next;
+                first.next = reverse;
+                reverse = first;
+                first = second;
+            }
+            first = reverse;
+            return first;
+        }
+        return null;
     }
 
 

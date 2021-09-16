@@ -1,3 +1,5 @@
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class LinkedListTest {
@@ -57,5 +59,27 @@ public class LinkedListTest {
         catch(Exception e){
             System.out.println(e.getMessage());
         }
+    }
+
+    @Test
+    public void reverseLinkedList() {
+        LinkedList<String> list = new LinkedList<String>();
+        list.add("Bye");
+        list.add("Hello");
+        list.add("Nice");
+        list.add("Cat");
+        list.add("Dog");
+        list.add("Food");
+        list.reverseLinkedList();
+        try{
+            String res = list.getFirst();
+            assertEquals("LinkedList reverse does not work.", res, "Food");
+            String second = list.get(1);
+            assertEquals("LinkedList reverse does not work.", second, "Dog");
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
     }
 }
