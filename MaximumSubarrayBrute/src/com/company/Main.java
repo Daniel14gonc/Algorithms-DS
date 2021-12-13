@@ -28,5 +28,11 @@ public class Main {
 		System.out.println("Minimum index: " + res[0]);
 		System.out.println("Maximum index: " + res[1]);
 		System.out.println("Sum: " + res[2]);
+		System.out.println("\n----------Linear---------------");
+		LinearMaximum lin = new LinearMaximum();
+		res = lin.maximum(array);
+		System.out.println("Minimum index: " + res[0]);
+		System.out.println("Maximum index: " + res[1]);
+		System.out.println("Sum: " + res[2]);
     }
 }
